@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Student Success · Early Signals</title>
+
+    <link rel="stylesheet" href="assets/style.css?v=student2">
+</head>
+
+<body>
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+
+    <!-- Login page -->
+    <section id="loginView" class="login-layout">
+        <div class="intro">
+            <div class="brand">
+                <span class="brand-icon">S</span>
+                StudentSuccess
+            </div>
+
+            <div class="eyebrow">
+                EARLY SIGNALS. TIMELY SUPPORT.
+            </div>
+
+            <h1>
+                A little attention.<br>
+                <span>A better tomorrow.</span>
+            </h1>
+
+            <p>
+                See academic warning signs early.
+                Bring teachers into the conversation.
+                Track the support that makes a difference.
+            </p>
+
+            <div class="feature-tags">
+                <span>Attendance</span>
+                <span>Academic progress</span>
+                <span>Teacher-led support</span>
+            </div>
+
+            <div class="login-art" aria-hidden="true"><div class="orbit-stage"><div class="orbit-ring orbit-one"><span></span></div><div class="orbit-ring orbit-two"><span></span></div><div class="signal-core">✦<small>EARLY SIGNALS</small><strong>A little support.<br>A brighter future.</strong></div></div></div>
+            <div class="intro-note">
+                Student Success Early-Signal Platform<br>
+                with Human-in-the-Loop Intervention
+            </div>
+        </div>
+
+        <form id="loginForm" class="glass login-card">
+            <div class="portal-tabs" role="group" aria-label="Login section">
+                <button type="button" data-portal="student" aria-pressed="true">Student Login</button>
+                <button type="button" data-portal="staff" aria-pressed="false">Teacher / Admin</button>
+            </div>
+            <input type="hidden" name="portal" value="student">
+
+            <div class="eyebrow">
+                YOUR SUPPORT WORKSPACE
+            </div>
+
+            <h2 id="portalHeading">Your learning journey.</h2>
+
+            <p class="muted">
+                <span id="portalDescription">View your own attendance, marks and support plan.</span>
+            </p>
+
+            <label>
+                Username
+                <input
+                    name="username"
+                    autocomplete="username"
+                    required
+                    maxlength="50"
+                    placeholder="Enter username"
+                >
+            </label>
+
+            <label>
+                Password
+                <input
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    required
+                    placeholder="Enter password"
+                >
+            </label>
+
+            <button class="primary" type="submit">
+                Sign in
+                <span>→</span>
+            </button>
+
+            <p id="loginError" class="error" role="alert"></p>
+
+            <button
+                type="button"
+                id="openRegisterBtn" hidden
+                class="secondary"
+                style="width:100%; margin:12px 0;"
+            >
+                Create an account
+            </button>
+
+            <small class="muted">
+                <span id="portalHint">Need an account? Ask your administrator for your student login.</span>
+            </small>
+        </form>
+    </section>
+
+    <!-- Application workspace -->
+    <div id="appView" class="app-layout" hidden>
+        <aside class="glass sidebar">
+            <div class="brand">
+                <span class="brand-icon">S</span>
+                <span>
+                    Student<br>
+                    Success
+                </span>
+            </div>
+
+            <div class="eyebrow nav-label">
+                WORKSPACE
+            </div>
+
+            <nav>
+                <button data-page="dashboard" class="nav active"><span class="nav-icon" aria-hidden="true">◈</span><span>Overview</span></button>
+
+                <button data-page="students" class="nav"><span class="nav-icon" aria-hidden="true">▤</span><span>Students</span></button>
+
+                <button data-page="reviews" class="nav"><span class="nav-icon" aria-hidden="true">◎</span><span>Reviews</span><span id="alertCount"></span></button>
+
+                <button data-page="followups" class="nav"><span class="nav-icon" aria-hidden="true">◷</span><span>Follow-ups</span></button>
+
+                <button data-page="users" class="nav admin-only"><span class="nav-icon" aria-hidden="true">♧</span><span>Teachers</span></button>
+
+                <button data-page="settings" class="nav"><span class="nav-icon" aria-hidden="true">⚙</span><span>Account</span></button>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="small muted">
+                    DECISIONS STAY HUMAN
+                </div>
+
+                <p>
+                    Signals guide a conversation.<br>
+                    Teachers decide the support.
+                </p>
+
+                <button id="logoutBtn" class="secondary">
+                    Sign out
+                </button>
+            </div>
+        </aside>
+
+        <main>
+            <header>
+                <div>
+                    <div class="eyebrow">
+                        ACADEMIC SUPPORT WORKSPACE
+                    </div>
+
+                    <h2 id="pageTitle">Overview</h2>
+                </div>
+
+                <div class="user-chip">
+                    <span class="avatar" id="initials">T</span>
+
+                    <div>
+                        <strong id="userName"></strong>
+                        <small id="userRole" class="muted"></small>
+                    </div>
+                </div>
+            </header>
+
+            <div id="content"></div>
+
+            <footer>
+                StudentSuccess · Rule-based signals, reviewed by people
+            </footer>
+        </main>
+    </div>
+
+    <!-- Shared popup for forms -->
+    <dialog id="modal">
+        <div class="modal-head">
+            <h2 id="modalTitle"></h2>
+
+            <button
+                type="button"
+                id="closeModal"
+                class="icon-button"
+                aria-label="Close dialog"
+            >
+                ×
+            </button>
+        </div>
+
+        <div id="modalBody"></div>
+    </dialog>
+
+    <div id="toast" role="status" hidden></div>
+
+    <script src="assets/app.js?v=student2"></script>
+</body>
+</html>
